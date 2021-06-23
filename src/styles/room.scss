@@ -1,0 +1,127 @@
+#room-page {
+
+  header {
+
+    padding: 1.5rem;
+
+    border-bottom: 1px solid #e2e2e2;
+
+    .content {
+      max-width: 1120px;
+
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > img {
+        max-height: 45px;
+      }
+    }
+  }
+
+  main {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    .room-title {
+      margin: 2rem 0 1.5rem;
+
+      display: flex;
+      align-items: center;
+
+      h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+
+        color: #29292e;
+      }
+
+      span {
+        margin-left: 14px;
+
+        background: #e559f9;        
+        color: #fff;
+
+        border-radius: 9999px;
+
+        padding: .5rem 1rem;
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+
+      form {
+        textarea {
+          width: 100%;
+
+          border: none;
+          border-radius: 8px;
+          
+          padding: 1rem;
+
+          background: #fefefe;
+
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+          resize: vertical;
+
+          min-height: 8.8rem;
+          max-height: 70vh;
+        }
+
+        .form-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          margin: 1rem 0 0 0;
+
+          .user-info {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 2rem;
+              height: 2rem;
+
+              border-radius: 50%;
+            }
+
+            span {
+              margin: 0 0 0 8px;
+
+              color: #29292e;
+
+              font-weight: 500;
+              font-size: 14px;
+            }
+          }
+
+          > span {
+            font-size: 14px;
+            font-weight: 500;
+
+            color: #737300;
+
+            button {
+              background: transparent;
+              color: #835afd;
+
+              border: none;
+
+              text-decoration: underline;
+
+              font-size: 14px;
+              font-weight: 500;
+
+              cursor: pointer;
+            }
+          }
+        }
+      }
+  }
+
+}

@@ -1,39 +1,64 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-import illustrationImage from '../assets/images/illustration.svg';
+import { FormEvent, useState } from 'react';
+
 import logoImage from '../assets/images/logo.svg';
 
 import '../styles/auth.scss'
 
 import { Button } from '../components/Button';
+import { AuthAside } from '../components/AuthAside';
 
-// import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuth';
+
+import { database } from '../services/firebase';
 
 export function NewRoom() {
 
-  // const { user } = useAuth();
+  const { user } = useAuth();
+
+  const [newRoom, setNewRoom] = useState('');
+
+  const history = useHistory();
+
+  async function handleCreateRoom(event: FormEvent) {
+
+    event.preventDefault();
+
+    if (newRoom.trim() === "") {
+      return;
+    }
+
+    const roomReference = database.ref('rooms');
+
+    const firebaseRoom = await roomReference.push({
+      title: newRoom.trim(),
+      authorId: user?.id,
+    });
+
+    history.push(`/rooms/${firebaseRoom.key}`);
+  }
 
   return (
     <section id="auth-page">
-      <aside>
-        <img src={illustrationImage} alt="questions and answers screen illustration" />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p>
-      </aside>
+      <AuthAside />
       <main>
         <div className="main-content">
           <img src={logoImage} alt="Letmeask logo" />
-          <h2>Crie uma nova sala</h2>
-          <form>
-            <input 
-            type="text" 
-            placeholder="Nome da sala"
+          <h2>Crie uma nova sala, {user ? user.name : ''}.</h2>
+          <form onSubmit={handleCreateRoom}>
+            <input
+              type="text"
+              placeholder="Nome da sala"
+              onChange={event => setNewRoom(event.target.value)}
+              value={newRoom}
             />
             <Button type="submit">
               Criar sala
             </Button>
           </form>
           <p>Quer entrar em uma sala existente?
+            <br />
             <Link to="/">Clique aqui</Link>
           </p>
         </div>
