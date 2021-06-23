@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import logoImage from '../assets/images/logo.svg';
+import emptyQuestionsImage from '../assets/images/empty-questions.svg';
 
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
@@ -155,6 +156,20 @@ export function Room() {
         </form>
 
       </main>
+
+      <section className="questions-display">
+
+        <img src={emptyQuestionsImage} alt="" />
+        <h4>Nenhuma pergunta por aqui...</h4>
+
+        {
+          user ?
+            <p>Seja o primeiro a perguntar.</p>
+            :
+            <p>Faça login e seja o primeiro a perguntar.</p>
+        }
+
+      </section>
 
     </section >
   );

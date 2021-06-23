@@ -124,4 +124,30 @@
       }
   }
 
+  .questions-display {
+    max-width: 800px;
+
+    margin: 6rem auto 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      
+      color: #29292E;
+
+      margin: 1rem 0 .5rem 0;
+    }
+
+    p {
+      font-size: 14px;
+
+      color: #737380;
+    }
+  }
+
 }
