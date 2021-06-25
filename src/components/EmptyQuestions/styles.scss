@@ -1,0 +1,25 @@
+.empty-messages {
+  width: 100%;
+
+  margin: 4rem 0 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+    color: #29292e;
+
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  p {
+    font-size: 14px;
+
+    color: #737380;
+  }
+}

@@ -7,8 +7,8 @@ import googleIconImage from '../assets/images/google-icon.svg'
 
 import '../styles/auth.scss'
 
-import { Button } from '../components/Button';
-import { AuthAside } from '../components/AuthAside';
+import { Button } from '../components/Button/index';
+import { AuthAside } from '../components/AuthAside/index';
 
 import { useAuth } from '../hooks/useAuth';
 
@@ -44,6 +44,11 @@ export function Home() {
       return;
     }
 
+    if (roomRef.val().endedAt) {
+      alert('Room already closed.');
+      return;
+    }
+
     history.push(`/rooms/${roomCode}`);
   }
 
@@ -66,7 +71,7 @@ export function Home() {
               value={roomCode}
             />
             <Button type="submit">
-              Enviar
+              Entrar
             </Button>
           </form>
         </div>

@@ -1,7 +1,5 @@
 #room-page {
-
   header {
-
     padding: 1.5rem;
 
     border-bottom: 1px solid #e2e2e2;
@@ -18,6 +16,17 @@
       > img {
         max-height: 45px;
       }
+
+      div {
+        display: flex;
+        gap: 1rem;
+
+        button {
+          margin: 0;
+
+          height: 40px;
+        }
+      }
     }
   }
 
@@ -33,7 +42,7 @@
       align-items: center;
 
       h1 {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 24px;
 
         color: #29292e;
@@ -42,86 +51,104 @@
       span {
         margin-left: 14px;
 
-        background: #e559f9;        
+        background: #e559f9;
         color: #fff;
 
         border-radius: 9999px;
 
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         font-weight: 500;
         font-size: 14px;
       }
     }
 
-      form {
-        textarea {
-          width: 100%;
+    form {
+      textarea {
+        width: 100%;
 
-          border: none;
-          border-radius: 8px;
-          
-          padding: 1rem;
+        border: none;
+        border-radius: 8px;
 
-          background: #fefefe;
+        padding: 1rem;
 
-          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        background: #fefefe;
 
-          resize: vertical;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 
-          min-height: 8.8rem;
-          max-height: 70vh;
+        resize: vertical;
+
+        min-height: 8.8rem;
+        max-height: 70vh;
+
+        &:focus {
+          border: 1px solid #835afd;
+        }
+      }
+
+      .form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 1rem 0 0 0;
+
+        button {
+          margin: 0;
         }
 
-        .form-footer {
+        .user-info {
           display: flex;
-          justify-content: space-between;
           align-items: center;
 
-          margin: 1rem 0 0 0;
+          img {
+            width: 2rem;
+            height: 2rem;
 
-          .user-info {
-            display: flex;
-            align-items: center;
-
-            img {
-              width: 2rem;
-              height: 2rem;
-
-              border-radius: 50%;
-            }
-
-            span {
-              margin: 0 0 0 8px;
-
-              color: #29292e;
-
-              font-weight: 500;
-              font-size: 14px;
-            }
+            border-radius: 50%;
           }
 
-          > span {
+          span {
+            margin: 0 0 0 8px;
+
+            color: #29292e;
+
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
+
+        > span {
+          font-size: 14px;
+          font-weight: 500;
+
+          color: #737300;
+
+          button {
+            background: transparent;
+            color: #835afd;
+
+            border: none;
+
+            text-decoration: underline;
+
             font-size: 14px;
             font-weight: 500;
 
-            color: #737300;
-
-            button {
-              background: transparent;
-              color: #835afd;
-
-              border: none;
-
-              text-decoration: underline;
-
-              font-size: 14px;
-              font-weight: 500;
-
-              cursor: pointer;
-            }
+            cursor: pointer;
           }
         }
       }
+    }
   }
 
+  .questions-display {
+    max-width: 800px;
+
+    margin: 2rem auto 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
