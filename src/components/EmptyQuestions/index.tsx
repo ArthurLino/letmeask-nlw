@@ -3,10 +3,11 @@ import emptyQuestionsImage from "../../assets/images/empty-questions.svg";
 import "./styles.scss"
 
 type EmptyQuestionsProps = {
-  userIsLoggedIn: boolean
+  isAnAdminRoom?: boolean;
+  userIsLoggedIn?: boolean
 }
 
-export function EmptyQuestions(props: EmptyQuestionsProps) {
+export function EmptyQuestions({isAnAdminRoom, userIsLoggedIn}: EmptyQuestionsProps) {
   return (
 
     <div className="empty-messages">
@@ -14,12 +15,22 @@ export function EmptyQuestions(props: EmptyQuestionsProps) {
       <img src={emptyQuestionsImage} alt="Não há nenhuma pergunta" />
       <h4>Nenhuma pergunta por aqui...</h4>
 
-      { props.userIsLoggedIn ?
+      { !isAnAdminRoom ?
 
-        (<p>Seja o primeiro a perguntar.</p>) :
-        (<p>Faça Login e seja o primeiro a perguntar.</p>)  
-      
-      }   
+        ( <>
+
+        { userIsLoggedIn ?
+
+          (<p>Seja o primeiro a perguntar.</p>) :
+          (<p>Faça Login e seja o primeiro a perguntar.</p>)  
+        
+        }   
+
+        </> 
+        ):(
+          <p>Convide pessoas para entrarem na sua sala!</p>
+        )    
+      }
 
     </div>
 

@@ -27,6 +27,15 @@
     color: #835afd;
   }
 
+  &.dangerous {
+    background: #e73f5d;
+  }
+
+  &.grey {
+    background: #dbdcdd;
+    color: #737380;
+  }
+
   img {
     margin: 0 0 0 0.5rem;
   }

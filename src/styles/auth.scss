@@ -72,12 +72,12 @@
     height: 50px;
 
     border-radius: 0.5rem;
-    border: none;
+    border: 1px solid #a8a8b3;
 
     font-weight: 500;
 
-    background: #ea4335;
-    color: #fff;
+    background: #f8f8f8;
+    color: #29292e;
 
     display: flex;
     align-items: center;
@@ -92,7 +92,7 @@
     }
 
     &:hover {
-      filter: brightness(0.9);
+      filter: brightness(0.98);
     }
   }
 
@@ -130,10 +130,15 @@
   }
 }
 
-// @media (max-width: 991.98px) {
-//   #auth-page {
-//     height: 200vh;
+@media (max-width: 991.98px) {
+  #auth-page {
+    height: 145vh;
 
-//     flex-direction: column;
-//   }
-// }
+    flex-direction: column;
+    flex: 1;
+
+    .main-content {
+      padding: 4rem 0;
+    }
+  }
+}

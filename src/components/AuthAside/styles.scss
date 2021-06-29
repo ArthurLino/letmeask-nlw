@@ -33,3 +33,21 @@
     }
   }
 }
+
+@media (max-width: 991.98px) {
+  #auth-page {
+    aside {
+      padding: 4rem 1.2rem;
+      flex: 2;
+
+      img {
+        max-width: 240px;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: initial;
+      }
+    }
+  }
+}
