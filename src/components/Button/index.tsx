@@ -8,6 +8,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isOutlined?: boolean;
   isDangerous?: boolean;
   isGrey?: boolean;
+  ref?: string;
 };
 
 export function Button({isOutlined = false, isDangerous = false, isGrey = false, ...props}: ButtonProps) {

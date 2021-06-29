@@ -1,5 +1,5 @@
-import { FormEvent, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { FormEvent, useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 
 import logoImage from '../assets/images/logo.svg';
 
@@ -21,14 +21,28 @@ type RoomParams = {
 
 export function Room() {
 
+  const history = useHistory();
+
   const params = useParams<RoomParams>();
   const roomId = params.id;
 
-  const { user } = useAuth();
+  const { user, signInWithGoogle } = useAuth();
 
   const [newQuestion, setNewQuestion] = useState('');
 
   const { questions, title } = useRoom( roomId )
+
+  useEffect((() => {
+    database.ref(`/rooms/${roomId}`).once('value', room => {
+
+      const isRoomEnded = room.val().endedAt;
+
+      if ( isRoomEnded ) {
+        alert('O adiministrador fechou esta sala.')
+        history.push(`/`);
+      }
+    });
+  }), [ database.ref(`/rooms/${roomId}/endedAt`)]);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -90,7 +104,10 @@ export function Room() {
 
         <div className="room-title">
 
-          <h1>Sala: {title}</h1>
+          <div>
+            <h1>Sala: {title}</h1>
+            <p>Criador: {user?.name}</p>
+          </div>
           {
             questions.length > 0 && <span>{questions.length} pergunta(s)</span>
           }
@@ -116,7 +133,7 @@ export function Room() {
 
             ) : (
 
-              <span> Para enviar uma pergunta, <button>faça seu login</button>.</span>
+              <span> Para enviar uma pergunta, <button onClick={signInWithGoogle}>faça seu login</button>.</span>
 
             )
             }

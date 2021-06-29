@@ -4,6 +4,7 @@ import { FormEvent, useState } from 'react';
 
 import logoImage from '../assets/images/logo.svg';
 import googleIconImage from '../assets/images/google-icon.svg'
+import loginImage from '../assets/images/login.svg'
 
 import '../styles/auth.scss'
 
@@ -78,7 +79,8 @@ export function Home() {
               value={roomCode}
             />
             <Button type="submit">
-              Entrar
+              <img src={loginImage} alt="icone de entrar" />
+              Entrar na Sala
             </Button>
           </form>
         </div>

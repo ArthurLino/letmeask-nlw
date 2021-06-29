@@ -1,12 +1,10 @@
 #room-page {
   header {
-    padding: 1.5rem;
+    padding: 1.5rem 2vw;
 
     border-bottom: 1px solid #e2e2e2;
 
     .content {
-      max-width: 1120px;
-
       margin: 0 auto;
 
       display: flex;
@@ -42,10 +40,17 @@
       align-items: center;
 
       h1 {
-        font-family: "Poppins", sans-serif;
         font-size: 24px;
+        font-family: "Poppins", sans-serif;
 
         color: #29292e;
+      }
+
+      > div {
+        p {
+          font-family: "Poppins", sans-serif;
+          color: #a8a8b3;
+        }
       }
 
       span {
@@ -151,4 +156,7 @@
     justify-content: center;
     flex-direction: column;
   }
+}
+
+@media (max-width: 991.98px) {
 }
