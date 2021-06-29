@@ -24,9 +24,9 @@ export function Home() {
 
   async function handleCreateRoom() {
 
-    if (!user) {
+    // if (!user) {
       await signInWithGoogle();
-    }
+    // }
 
     history.push('/rooms/new');
   }
@@ -50,7 +50,7 @@ export function Home() {
       return;
     }    
     
-    if ( roomRef.val().authorId == user?.id ) {
+    if ( roomRef.val().authorId === user?.id ) {
 
       history.push(`/admin/rooms/${roomCode}`);
       return;

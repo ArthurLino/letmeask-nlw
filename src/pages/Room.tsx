@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 import logoImage from '../assets/images/logo.svg';
 
@@ -92,7 +92,9 @@ export function Room() {
 
         <div className="content">
 
-          <img src={logoImage} alt="Letmeask logo" />
+          <Link to='/'>
+            <img src={logoImage} className="logo" alt="Letmeask logo" />
+          </Link>
 
           <RoomCode code={roomId} />
 
@@ -106,7 +108,6 @@ export function Room() {
 
           <div>
             <h1>Sala: {title}</h1>
-            <p>Criador: {user?.name}</p>
           </div>
           {
             questions.length > 0 && <span>{questions.length} pergunta(s)</span>

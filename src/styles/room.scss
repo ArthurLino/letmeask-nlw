@@ -1,6 +1,6 @@
 #room-page {
   header {
-    padding: 1.5rem 2vw;
+    padding: 1.5rem 10vw;
 
     border-bottom: 1px solid #e2e2e2;
 
@@ -11,7 +11,7 @@
       justify-content: space-between;
       align-items: center;
 
-      > img {
+      .logo {
         max-height: 45px;
       }
 
@@ -29,7 +29,7 @@
   }
 
   main {
-    max-width: 800px;
+    max-width: 80vw;
 
     margin: 0 auto;
 
@@ -147,7 +147,7 @@
   }
 
   .questions-display {
-    max-width: 800px;
+    max-width: 80vw;
 
     margin: 2rem auto 0 auto;
 
@@ -159,4 +159,49 @@
 }
 
 @media (max-width: 991.98px) {
+  #room-page {
+    .questions-display {
+      max-width: 80vw;
+      min-height: 20vh;
+
+      margin: 4rem auto 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #endRoomButton {
+      padding: 0;
+
+      span {
+        display: none;
+      }
+
+      svg {
+        display: block;
+
+        height: 90%;
+      }
+    }
+
+    main {
+      form {
+        textarea {
+          min-height: 14rem;
+        }
+
+        .form-footer {
+          margin: 1.5rem 0 0 0;
+
+          .user-info {
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }

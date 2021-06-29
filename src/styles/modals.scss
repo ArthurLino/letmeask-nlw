@@ -3,8 +3,10 @@
 
   border-radius: 0.5rem;
 
-  width: 70%;
-  height: 50%;
+  padding: 2vh 4vw;
+
+  width: 70vw;
+  height: 50vh;
 
   display: flex;
   flex-direction: column;
@@ -12,7 +14,10 @@
   justify-content: center;
   gap: 1rem;
 
-  img {
+  text-align: center;
+
+  img,
+  svg {
     height: 48px;
   }
 
@@ -46,4 +51,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 991.98px) {
+  .Modal {
+    width: 90vw;
+
+    padding: 1rem 4vw;
+  }
 }

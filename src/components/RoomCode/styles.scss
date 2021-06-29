@@ -44,3 +44,20 @@
     white-space: nowrap;
   }
 }
+
+@media (max-width: 991.98px) {
+  .room-code {
+    align-items: center;
+    justify-content: center;
+    background-color: #835afd;
+
+    span {
+      display: none;
+    }
+
+    div {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
