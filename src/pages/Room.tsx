@@ -15,6 +15,9 @@ import { database } from '../services/firebase';
 
 import '../styles/room.scss';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 type RoomParams = {
   id: string;
 }
@@ -38,7 +41,7 @@ export function Room() {
       const isRoomEnded = room.val().endedAt;
 
       if ( isRoomEnded ) {
-        alert('O adiministrador fechou esta sala.')
+        toast("O adiministrador encerrou esta sala.");
         history.push(`/`);
       }
     });
@@ -52,14 +55,14 @@ export function Room() {
     }
 
     if (!user) {
-      throw new Error('You must be logged in');
+      toast("Você precisa fazer login para usar esta ação!");
     }
 
     const question = {
       content: newQuestion,
       author: {
-        name: user.name,
-        avatar: user.avatar,
+        name: user?.name,
+        avatar: user?.avatar,
       },
       isHighlighted: false,
       isAnswered: false,
@@ -87,6 +90,19 @@ export function Room() {
 
   return (
     <section id="room-page">
+
+    <ToastContainer 
+      toastClassName="room-code-alert"
+      position="bottom-center"
+      autoClose={1000}
+      hideProgressBar
+      closeOnClick={false}
+      pauseOnFocusLoss={false}
+      rtl={false}
+      draggable={false}
+      pauseOnHover
+      limit={1}
+    />
 
       <header>
 

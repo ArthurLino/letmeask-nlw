@@ -37,16 +37,28 @@
 @media (max-width: 991.98px) {
   #auth-page {
     aside {
+      height: 40vh;
       padding: 4rem 1.2rem;
-      flex: 2;
+
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      flex: none;
 
       img {
-        max-width: 240px;
+        max-height: 30vh;
+      }
+
+      strong {
+        font-size: 2rem;
       }
 
       p {
         font-size: 20px;
+
         line-height: initial;
+
+        display: none;
       }
     }
   }

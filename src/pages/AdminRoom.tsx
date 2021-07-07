@@ -53,6 +53,17 @@ export function AdminRoom() {
     });
   }), [user?.id]);
 
+  useEffect((() => {
+    database.ref(`/rooms/${roomId}`).once('value', room => {
+
+      const isRoomEnded = room.val().endedAt;
+
+      if ( isRoomEnded ) {
+        history.push(`/`);
+      }
+    });
+  }), [ database.ref(`/rooms/${roomId}/endedAt`)]);
+
   function openDeleteQuestionModal() {
     setquestionModalIsOpen(true);
   }
